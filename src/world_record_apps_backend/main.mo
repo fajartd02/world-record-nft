@@ -14,6 +14,14 @@ actor NFTWorldCertificate {
     world_record: Text; // Changed to Text for dynamic content
   };
 
+  public type RequestNewCertificate = {
+    ownership_id: Text;
+    nft_image_certificate: Text;
+    certificate_number: Text;
+    issue_date: Text;
+    world_record: Text; // Changed to Text for dynamic content
+  };
+
   var certificates = List.nil<NFTCertificate>();
   // Counter to generate unique token IDs
   private var tokenCounter: Nat = 0;
@@ -24,7 +32,7 @@ actor NFTWorldCertificate {
   };
 
   // Function to add a new certificate
-  public func createWorldCertificate(post : NFTCertificate) {
+  public func createWorldCertificate(post : RequestNewCertificate) {
     let new_token_id = generateTokenId();
     let newCertificate: NFTCertificate = {
         ownership_id = post.ownership_id;
