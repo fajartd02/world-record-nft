@@ -41,6 +41,50 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     console.error("Error minting certificate:", error);
     document.getElementById("greeting").innerText = "Failed to mint certificate.";
   }
-
   button.removeAttribute("disabled");
 });
+
+// Function to fetch and display all certificates
+async function fetchAndDisplayCertificates() {
+  try {
+    const certificates = await world_record_apps_backend.getListAllCertificates();
+    const certificateList = document.getElementById("certificate-list");
+    certificateList.innerHTML = "";
+
+    certificates.forEach(certificate => {
+      const certificateElement = document.createElement("div");
+      certificateElement.className = "certificate";
+
+      certificateElement.innerHTML = `
+        <p><strong>Ownership ID:</strong> ${certificate.ownership_id}</p> <br/>
+        <p><strong>Issue Date:</strong> ${certificate.issue_date}</p> <br/>
+        <p><strong>Certificate Number:</strong> ${certificate.certificate_number}</p> <br/>
+        <p><strong>Owner Name:</strong> ${certificate.owner_name}</p> <br/>
+        <p><strong>World Record:</strong> ${certificate.world_record}</p> <br/>
+        <p><strong>Token ID:</strong> ${certificate.token_id}</p> <br/>
+        <img src="${certificate.nft_image_certificate}" alt="NFT Image" /> <br/><br/>
+      `;
+
+      certificateList.appendChild(certificateElement);
+    });
+  } catch (error) {
+    console.error("Error fetching certificates:", error);
+    document.getElementById("certificate-list").innerText = "Failed to load certificates.";
+  }
+}
+
+// Function to toggle the visibility of the certificates section
+document.getElementById("toggle-certificates").addEventListener("click", () => {
+  const certificatesSection = document.getElementById("certificates");
+  if (certificatesSection.style.display === "none") {
+    certificatesSection.style.display = "block";
+    document.getElementById("toggle-certificates").innerText = "Hide Certificates";
+    fetchAndDisplayCertificates();
+  } else {
+    certificatesSection.style.display = "none";
+    document.getElementById("toggle-certificates").innerText = "Show Certificates";
+  }
+});
+
+// Initial fetch and display of certificates when the page loads
+document.addEventListener("DOMContentLoaded", fetchAndDisplayCertificates);

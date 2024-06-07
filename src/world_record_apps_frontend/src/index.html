@@ -12,6 +12,8 @@
   <main>
     <img src="logo2.svg" alt="DFINITY logo" id="logo"/>
     <h1>World Record Application</h1>
+    <section id="greeting"></section>
+
     <form action="#">
       <label for="world_record_name">World Record Name:</label>
       <input id="world_record_name" name="owner_name" type="text" />
@@ -36,7 +38,11 @@
 
       <button type="submit">Generate!</button>
     </form>
-    <section id="greeting"></section>
+    <button id="toggle-certificates">Show Certificates</button>
+    <section id="certificates">
+      <h2>All Certificates</h2>
+      <div id="certificate-list"></div>
+    </section>
   </main>
 </body>
 </html>
