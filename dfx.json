@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "world_record_apps_backend": {
+      "main": "src/world_record_apps_backend/main.mo",
+      "type": "motoko"
+    },
+    "world_record_apps_frontend": {
+      "dependencies": [
+        "world_record_apps_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/world_record_apps_frontend/src/index.html"
+      },
+      "source": [
+        "src/world_record_apps_frontend/assets",
+        "dist/world_record_apps_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
