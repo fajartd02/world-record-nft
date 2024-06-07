@@ -8,6 +8,9 @@
 - ```dfx start --background``` to run dfx
 - ```dfx deploy``` to deploy it
 - ```npm run start``` to run frontend
+- if you want to use only backend UI, you use it after ```dfx deploy``` you will got the link. example link: http://127.0.0.1:4943/?canisterId=asrmz-lmaaa-aaaaa-qaaeq-cai&id=by6od-j4aaa-aaaaa-qaadq-cai
+- you can start to generate an NFT with fill the form and then submit
+- to see the NFT certificates, you can just click button show NFT certificates
 
 Welcome to your new world_record_apps project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
 
