@@ -32,7 +32,7 @@ actor NFTWorldCertificate {
   };
 
   // Function to add a new certificate
-  public func createWorldCertificate(post : RequestNewCertificate) {
+  public func mintingWorldCertificate(post : RequestNewCertificate) {
     let new_token_id = generateTokenId();
     let newCertificate: NFTCertificate = {
         ownership_id = post.ownership_id;
