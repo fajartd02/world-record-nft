@@ -11,6 +11,7 @@ actor NFTWorldCertificate {
     certificate_number: Text;
     issue_date: Text;
     token_id: Text;
+    owner_name: Text;
     world_record: Text; // Changed to Text for dynamic content
   };
 
@@ -19,6 +20,7 @@ actor NFTWorldCertificate {
     nft_image_certificate: Text;
     certificate_number: Text;
     issue_date: Text;
+    owner_name: Text;
     world_record: Text; // Changed to Text for dynamic content
   };
 
@@ -39,6 +41,7 @@ actor NFTWorldCertificate {
         nft_image_certificate = post.nft_image_certificate;
         certificate_number = post.certificate_number;
         issue_date = post.issue_date;
+        owner_name = post.owner_name;
         token_id = new_token_id;
         world_record = post.world_record;
       };
