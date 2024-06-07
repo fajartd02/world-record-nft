@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>world_record_apps</title>
-    <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <main>
-      <img src="logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#">
-        <label for="name">Genereate New World Record: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Record Application</title>
+  <base href="/" />
+  <link rel="icon" href="favicon.ico" />
+  <link type="text/css" rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <main>
+    <img src="logo2.svg" alt="DFINITY logo" id="logo"/>
+    <h1>World Record Application</h1>
+    <form action="#">
+      <label for="world_record_name">World Record Name:</label>
+      <input id="world_record_name" name="owner_name" type="text" />
+
+      <label for="person_name">New World Owner Record Name:</label>
+      <input id="person_name" name="person_name" type="text" />
+
+      <label for="issue_date">Issue Date:</label>
+      <input id="issue_date" name="issue_date" type="text" />
+
+      <label for="certificate_number">Certificate Number:</label>
+      <input id="certificate_number" name="certificate_number" type="text" />
+
+      <label for="repetition">Repetition:</label>
+      <input id="repetition" name="repetition" type="text" />
+
+      <label for="place">Place World Record:</label>
+      <input id="place" name="place" type="text" />
+
+      <label for="place">Link Image</label>
+      <input id="image-generate" name="place" type="should be generated" />
+
+      <button type="submit">Generate!</button>
+    </form>
+    <section id="greeting"></section>
+  </main>
+</body>
 </html>
